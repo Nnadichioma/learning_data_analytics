@@ -1,0 +1,23 @@
+# Types of SQL Commands
+
+SQL commands are divided into several categories:
+
+## 1. Data Definition Language (DDL)
+- Commands that define or modify database structure.
+- Examples: `CREATE`, `ALTER`, `DROP`
+
+## 2. Data Manipulation Language (DML)
+- Commands that manipulate data inside tables.
+- Examples: `INSERT`, `UPDATE`, `DELETE`
+
+## 3. Data Query Language (DQL)
+- Commands to query data.
+- Example: `SELECT`
+
+## 4. Data Control Language (DCL)
+- Commands that control access to data.
+- Examples: `GRANT`, `REVOKE`
+
+## 5. Transaction Control Language (TCL)
+- Commands to manage transactions.
+- Examples: `COMMIT`, `ROLLBACK`, `SAVEPOINT`
