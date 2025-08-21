@@ -1,1 +1,53 @@
--- Create sample tablesCREATE TABLE customers (customer_id INT PRIMARY KEY,name VARCHAR(100),city VARCHAR(100));CREATE TABLE orders (order_id INT PRIMARY KEY,customer_id INT,product VARCHAR(100),FOREIGN KEY (customer_id) REFERENCES customers(customer_id));-- Insert sample dataINSERT INTO customers (customer_id, name, city) VALUES(1, 'Alice', 'New York'),(2, 'Bob', 'Los Angeles'),(3, 'Charlie', 'Chicago'),(4, 'David', 'New York');INSERT INTO orders (order_id, customer_id, product) VALUES(101, 1, 'Laptop'),(102, 2, 'Phone'),(103, 2, 'Tablet'),(104, 5, 'Headphones'); -- customer_id = 5 does not exist in customers-- INNER JOIN (only matching rows)SELECT c.customer_id, c.name, o.productFROM customers cINNER JOIN orders oON c.customer_id = o.customer_id;-- LEFT JOIN (all customers, orders if exist)SELECT c.customer_id, c.name, o.productFROM customers cLEFT JOIN orders oON c.customer_id = o.customer_id;-- RIGHT JOIN (all orders, customers if exist)SELECT c.customer_id, c.name, o.productFROM customers cRIGHT JOIN orders oON c.customer_id = o.customer_id;-- FULL OUTER JOIN (all customers and all orders)SELECT c.customer_id, c.name, o.productFROM customers cFULL JOIN orders oON c.customer_id = o.customer_id;-- SELF JOIN (customers from the same city)SELECT c1.name AS customer1, c2.name AS customer2, c1.cityFROM customers c1JOIN customers c2ON c1.city = c2.cityAND c1.customer_id <> c2.customer_id;-- CROSS JOIN (every customer with every order)SELECT c.name, o.productFROM customers cCROSS JOIN orders o;
+-- Create sample tables
+CREATE TABLE customers (
+customer_id INT PRIMARY KEY,
+name VARCHAR(100),
+city VARCHAR(100)
+);
+CREATE TABLE orders (
+order_id INT PRIMARY KEY,
+customer_id INT,
+product VARCHAR(100),
+FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+-- Insert sample data
+INSERT INTO customers (customer_id, name, city) VALUES
+(1, 'Alice', 'New York'),
+(2, 'Bob', 'Los Angeles'),
+(3, 'Charlie', 'Chicago'),
+(4, 'David', 'New York');
+INSERT INTO orders (order_id, customer_id, product) VALUES
+(101, 1, 'Laptop'),
+(102, 2, 'Phone'),
+(103, 2, 'Tablet'),
+(104, 5, 'Headphones'); -- customer_id = 5 does not exist in customers
+-- INNER JOIN (only matching rows)
+SELECT c.customer_id, c.name, o.product
+FROM customers c
+INNER JOIN orders o
+ON c.customer_id = o.customer_id;
+-- LEFT JOIN (all customers, orders if exist)
+SELECT c.customer_id, c.name, o.product
+FROM customers c
+LEFT JOIN orders o
+ON c.customer_id = o.customer_id;
+-- RIGHT JOIN (all orders, customers if exist)
+SELECT c.customer_id, c.name, o.product
+FROM customers c
+RIGHT JOIN orders o
+ON c.customer_id = o.customer_id;
+-- FULL OUTER JOIN (all customers and all orders)
+SELECT c.customer_id, c.name, o.product
+FROM customers c
+FULL JOIN orders o
+ON c.customer_id = o.customer_id;
+-- SELF JOIN (customers from the same city)
+SELECT c1.name AS customer1, c2.name AS customer2, c1.city
+FROM customers c1
+JOIN customers c2
+ON c1.city = c2.city
+AND c1.customer_id <> c2.customer_id;
+-- CROSS JOIN (every customer with every order)
+SELECT c.name, o.product
+FROM customers c
+CROSS JOIN orders o;
