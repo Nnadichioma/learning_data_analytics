@@ -1,0 +1,28 @@
+# Types of Databases
+
+Databases are organized collections of data. There are different types of databases designed for various use cases:
+
+## 1. Relational Databases
+- Store data in tables with rows and columns.
+- Use SQL for querying.
+- Examples: MySQL, PostgreSQL, Oracle.
+
+## 2. Key-Value Databases
+- Store data as key-value pairs.
+- Very fast for simple lookups.
+- Examples: Redis, DynamoDB.
+
+## 3. Document Databases
+- Store data as documents (JSON, BSON).
+- Flexible schemas.
+- Examples: MongoDB, CouchDB.
+
+## 4. Column-Based Databases
+- Store data by columns instead of rows.
+- Good for analytical queries.
+- Examples: Apache Cassandra, HBase.
+
+## 5. Graph Databases
+- Store data as nodes and edges.
+- Useful for relationships and networks.
+- Examples: Neo4j, Amazon Neptune.

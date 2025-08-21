@@ -1,0 +1,44 @@
+# 📘 What is Data, Database, and SQL?
+
+---
+
+## 🟢 What is Data?
+
+**Data** is raw information or facts.  
+It can be:
+- Numbers (e.g. 25, 3.14)
+- Text (e.g. "Apple")
+- Dates (e.g. 2025-08-06)
+
+> Example: Names, sales figures, product prices
+
+---
+
+## 🟢 What is a Database?
+
+A **Database** is a structured collection of data, stored and accessed electronically.
+
+It helps in:
+- Storing large amounts of data
+- Managing and organizing it
+- Retrieving specific information easily
+
+---
+
+## 🟢 What is SQL?
+
+**SQL** = Structured Query Language  
+It’s the language used to:
+- Talk to a database
+- Add, update, delete, or retrieve data
+
+SQL is used in **Relational Databases** like:
+- PostgreSQL
+- MySQL
+- Oracle
+- SQL Server
+
+---
+
+## 🗓️ Date: 2025-08-06  
+✍️ By: [Chioma Nnadi]
