@@ -1,0 +1,24 @@
+SET OPERATORS
+
+Operators:
+1. UNION
+   - Combines results of two queries.
+   - Removes duplicates automatically.
+
+2. UNION ALL
+   - Same as UNION but keeps duplicates.
+   - Faster than UNION since no deduplication.
+
+3. INTERSECT
+   - Returns only rows present in both queries.
+
+4. EXCEPT
+   - Returns rows from the first query not present in the second.
+
+Rules for Set Operators:
+- Each SELECT must return the same number of columns.
+- The corresponding columns must have the same or compatible data types.
+- The order of columns must match between queries.
+- The first query controls the column names (aliases).
+- ORDER BY can only be applied once, at the very end of the combined query.
+- Parentheses can be used to control precedence if mixing operators.

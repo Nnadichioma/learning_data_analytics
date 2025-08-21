@@ -1,0 +1,21 @@
+STRING FUNCTIONS
+
+Manipulation:
+- UPPER(string) → Converts text to uppercase.
+- LOWER(string) → Converts text to lowercase.
+- REPLACE(string, find, replace) → Replaces occurrences of 'find' with 'replace'.
+- LTRIM(string) / RTRIM(string) → Removes spaces from left/right.
+- TRIM(string) → Removes spaces from both sides.
+- CONCAT(str1, str2, …) → Joins multiple strings.
+
+Calculation:
+- LEN(string) → Returns length of string.
+
+Extraction:
+- LEFT(string, n) → Gets first n characters.
+- RIGHT(string, n) → Gets last n characters.
+- SUBSTRING(string, start, length) → Extracts part of string.
+
+Nested Usage:
+- Functions can be combined, e.g.:
+  UPPER(SUBSTRING('hello',1,3)) → 'HEL'

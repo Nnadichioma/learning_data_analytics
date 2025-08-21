@@ -1,0 +1,47 @@
+# Creating Databases and Tables in SQL
+
+## Creating a Database
+
+To create a new database, use the `CREATE DATABASE` statement
+
+Creating a Table
+To create a table, use the syntax:
+
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+    ...
+);
+
+Primary Key
+A primary key uniquely identifies each record in a table.
+
+It must be unique and not null.
+
+Declared in the column definition using PRIMARY KEY.
+
+Secondary Key (Foreign Key)
+A foreign key (or secondary key) is a column that creates a relationship between tables.
+
+It refers to the primary key in another table.
+
+Constraints
+Constraints enforce rules on data columns:
+
+NOT NULL — column cannot be empty
+
+2. UNIQUE — all values in the column must be different
+
+3. CHECK — ensures values meet a condition
+
+4. DEFAULT — sets a default value if none provided
+
+Common Data Types
+Data Type	Description
+INT		Integer numbers
+VARCHAR(n)	Variable-length string (max n)
+CHAR(n)		Fixed-length string (length n)
+DATE		Date values
+DECIMAL		Exact numeric values with decimals
+BOOLEAN		True or False

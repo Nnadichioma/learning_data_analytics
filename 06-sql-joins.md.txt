@@ -1,0 +1,69 @@
+# SQL Joins
+
+## What is a Join?
+A **JOIN** in SQL is used to combine data from two or more tables based on a related column between them.  
+Since relational databases usually normalize data (store it across multiple tables to reduce duplication), we often need to **recombine data** using joins.
+
+For example:
+- A `customers` table contains customer details.
+- An `orders` table contains their purchases.
+To see *which customer bought which product*, we use a JOIN.
+
+---
+
+## Why Do We Use Joins?
+1. **Recombine Data**  
+   - Real-world databases split data into different tables.  
+   - Joins allow us to query across multiple tables and rebuild relationships.  
+   - Example: Linking customers with their orders, or employees with departments.
+
+2. **Data Enrichment**  
+   - Joins help enrich one dataset with information from another.  
+   - Example: Adding customer city and age info alongside their purchase details.
+
+3. **Check for Existence of Data**  
+   - Joins can check if a record exists in another table.  
+   - Example: Find customers who have placed at least one order.  
+
+4. **Efficient Analysis**  
+   - Without joins, we would need to manually combine data (slow and error-prone).  
+   - Joins leverage the power of SQL to do this efficiently.
+
+---
+
+## Types of Joins
+### 1. **INNER JOIN**
+- Returns only the rows where there is a match in both tables.
+- Example: Customers who have placed orders.
+
+### 2. **LEFT JOIN (LEFT OUTER JOIN)**
+- Returns all rows from the left table, and the matching rows from the right table.
+- If there is no match, NULL is returned for the right table’s columns.
+- Example: All customers, and their orders (if any). Customers without orders will still appear.
+
+### 3. **RIGHT JOIN (RIGHT OUTER JOIN)**
+- Returns all rows from the right table, and the matching rows from the left table.
+- If there is no match, NULL is returned for the left table’s columns.
+- Example: All orders, with customer info (if available). Orders placed by unregistered customers will still appear.
+
+### 4. **FULL JOIN (FULL OUTER JOIN)**
+- Returns rows when there is a match in **either** table.
+- Unmatched rows from both tables are filled with NULLs.
+- Example: All customers and all orders, matched wherever possible.
+
+### 5. **SELF JOIN**
+- A table is joined with itself.
+- Commonly used to compare rows within the same table.
+- Example: Find customers who live in the same city.
+
+### 6. **CROSS JOIN**
+- Returns the **Cartesian product** of the two tables (all possible combinations).
+- Rarely used in practice, but useful for generating combinations.
+- Example: Every customer with every product.
+
+---
+
+### Key Points:
+- Always specify the join condition with `ON` to avoid unintended results.
+- Be careful when joining large tables, performance can be affected.
+- Use `WHERE` conditions after joins to filter results further.

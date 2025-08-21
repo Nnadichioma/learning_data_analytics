@@ -1,0 +1,70 @@
+# Filtering Data in SQL
+
+Filtering lets you retrieve specific rows from a table using conditions.
+
+## The WHERE Clause
+
+The `WHERE` clause filters records that meet a specified condition.
+Syntax:
+SELECT * FROM table_name
+WHERE condition;
+
+1. Common Operators in WHERE
+Operator	Description	Example
+=		Equal to	WHERE age = 30
+<> or !=	Not equal to	WHERE age <> 30
+>		Greater than	WHERE age > 25
+<		Less than	WHERE age < 40
+>=		Greater than or equal to WHERE age >= 18
+<=		Less than or equal to    WHERE age <= 65
+
+2. BETWEEN Operator
+Selects values within a range.
+Syntax:
+	SELECT * FROM orders
+	WHERE order_date BETWEEN '2023-01-01' AND '2023-12-31';
+
+3. LIKE Operator and Wildcards
+Used for pattern matching in text columns.
+
+% matches zero or more characters
+
+_ matches exactly one character
+
+Examples:
+a). SELECT * FROM users
+WHERE username LIKE 'john%'; -- Starts with 'john'
+
+b). SELECT * FROM users
+WHERE username LIKE '%doe'; -- Ends with 'doe'
+
+c). SELECT * FROM users
+WHERE username LIKE '%ann%'; -- Contains 'ann'
+
+d). SELECT * FROM products
+WHERE code LIKE 'A_1'; -- 'A' followed by any one char, then '1'
+
+4. IN Operator
+Checks if a value matches any value in a list.
+SELECT * FROM users
+WHERE age IN (25, 30, 35);
+
+5. IS NULL and IS NOT NULL
+Filter rows where a column is or isn't NULL.
+
+a). SELECT * FROM users
+WHERE middle_name IS NULL;
+
+b). SELECT * FROM users
+WHERE middle_name IS NOT NULL;
+Combining Conditions with AND, OR, NOT
+
+6. Combining Conditions with AND, OR, NOT
+a). SELECT * FROM users
+WHERE age > 25 AND city = 'New York';
+
+b). SELECT * FROM users
+WHERE age < 18 OR age > 65;
+
+c). SELECT * FROM users
+WHERE NOT city = 'Chicago';

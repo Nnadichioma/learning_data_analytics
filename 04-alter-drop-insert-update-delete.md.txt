@@ -1,0 +1,54 @@
+# Altering, Dropping, and Manipulating Data in SQL
+
+## Altering a Table
+
+1. To modify an existing table, use `ALTER TABLE`. Common operations include:
+
+- Adding a column (syntax):
+
+	ALTER TABLE table_name
+	ADD column_name datatype;
+- Renaming a column (MySQL syntax):
+	ALTER TABLE table_name
+	RENAME old_column_name TO new_column_name;
+- Changing a column’s datatype:
+	ALTER TABLE table_name
+	MODIFY column_name new_datatype;
+
+2. Dropping a Table
+DROP TABLE removes the entire table and all its data permanently.
+
+Use carefully, because data cannot be recovered easily.
+
+Syntax:
+	DROP TABLE table_name;
+To avoid errors if the table does not exist, you can use:
+	DROP TABLE IF EXISTS table_name;
+
+3. Inserting Data
+Insert new rows with INSERT INTO:
+	INSERT INTO table_name (column1, column2)
+	VALUES (value1, value2);
+
+4. Updating Data
+Modify existing data with UPDATE:
+	UPDATE table_name
+	SET column1 = value1
+	WHERE condition;
+Important: Always use a WHERE clause to specify which rows to update, otherwise all rows in the table will be modified!
+
+5. Deleting Data
+Remove rows using DELETE:
+	DELETE FROM table_name
+	WHERE condition;
+Important: Always use a WHERE clause to specify which rows to delete, otherwise all rows in the table will be removed!
+
+6. Truncating a Table
+TRUNCATE TABLE removes all rows from a table quickly.
+
+Unlike DELETE, it does not log individual row deletions and cannot be rolled back in some databases.
+
+The table structure remains intact.
+
+Syntax:
+	TRUNCATE TABLE table_name;

@@ -1,0 +1,11 @@
+NUMBER FUNCTIONS
+
+1. ABS(number)
+   - Returns absolute value (removes sign).
+   - Example: ABS(-15) = 15
+
+2. ROUND(number, decimals)
+   - Rounds to given decimal places.
+   - Example: ROUND(123.456, 2) = 123.46
+   - Example: ROUND(123.456, 0) = 123
+   - Example: ROUND(123.456, -1) = 120

@@ -1,0 +1,19 @@
+-- UNION Example (removes duplicates)
+SELECT City FROM Customers
+UNION
+SELECT City FROM Suppliers;
+
+-- UNION ALL Example (keeps duplicates)
+SELECT City FROM Customers
+UNION ALL
+SELECT City FROM Suppliers;
+
+-- INTERSECT Example (common values in both queries)
+SELECT City FROM Customers
+INTERSECT
+SELECT City FROM Suppliers;
+
+-- EXCEPT Example (values in first query but not second)
+SELECT City FROM Customers
+EXCEPT
+SELECT City FROM Suppliers;
